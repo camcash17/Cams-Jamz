@@ -1,0 +1,37 @@
+{
+  "name": "project_file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "consolidate": "^0.15.0",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "engine": "^0.1.12",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jquery": "^3.2.1",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-spotify": "^0.3.1",
+    "pg-promise": "^7.3.2",
+    "request": "^2.83.0",
+    "session": "^0.1.0",
+    "soundcloud": "^3.3.0",
+    "spotify-web-api-node": "^2.5.0",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

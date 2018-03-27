@@ -1,0 +1,56 @@
+<%# views/crud-tracks/new.ejs %>
+<% include ../partials/head2.ejs %>
+
+<h1>Add to Playlist</h1>
+
+<div class="optionalInfo">
+  <% for(i=0; i<=0; i++) { %>
+  <form action="/home" method="POST">
+    <label for="title">Title: </label>
+    <input id="title" type="text" name="title" readonly="readonly" value="<%= data.name %>" />
+
+    <br />
+    <br />
+
+    <label for="artist">Artist: </label>
+    <input id="artist" type="text" name="artist" readonly="readonly" value="<%= data.artists[i].name %>" />
+
+    <br />
+    <br />
+
+    <label for="album">Album: </label>
+    <input id="album" type="text" name="album" readonly="readonly" value="<%= data.album.name %>" />
+
+    <br />
+    <br />
+
+    <div class="trackID">
+      <label for="track_id">Track ID: </label>
+      <input id="track_id" type="text" name="track_id" readonly="readonly" value="<%= data.id %>" />
+    </div>
+
+    <br />
+    <br />
+</div>
+
+  <label for="playlist_id">Playlist: </label>
+  <select id="playlist_id" name="playlist_id">
+    <% playlistz.forEach(playlists => { %>
+      <option
+        value="<%= playlists.playlist_id %>"
+        selected="<%= tracks.playlist_id == playlists.playlist_id %>">
+        <%= `${playlists.title}` %>
+      </option>
+    <% }) %>
+  </select>
+
+  <br />
+  <br />
+
+  <input class="pointer" type="submit" value="Add the track!" />
+</form>
+
+<br />
+
+<% } %>
+<a href="/home">Cancel</a>

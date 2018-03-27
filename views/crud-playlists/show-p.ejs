@@ -1,0 +1,40 @@
+<% include ../partials/head1.ejs %>
+
+<body>
+  <div class="playlist">
+    <h1 id="header"><%= playlists.title %></h1>
+    <!-- <a href="/home">Go Back</a> -->
+    <br>
+    <a href="<%= `/playlist/${playlists.playlist_id}/edit` %>">Edit Playlist</a>
+    <br>
+    <form action="<%= `/playlist/${playlists.id}?_method=DELETE` %>" method="POST">
+      <input class="pointer" type="submit" value="Delete" />
+    </form>
+  <br />
+  <br />
+  <br />
+  <iframe src="https://open.spotify.com/embed?uri=spotify:user:12152445064:playlist:<%= playlists.playlist_id %>" width="600" height="380" frameborder="0" allowtransparency="true"></iframe>
+  <br />
+  <br />
+    <% tracks.forEach(track => { %>
+      <% if (track.playlist_id == playlists.playlist_id) { %>
+        <a href="<%= `/home/${track.id}` %>">
+          <div class="tracks">
+          <h4 class="tracktitle"><%= track.title %></h4>
+          <h4><%= track.artist %></h4>
+          <p>(<%= track.album %>)</p>
+        </div>
+        </a>
+      <% } %>
+    <br />
+    <br />
+    <% }) %>
+  </div>
+  <script>
+    sr.reveal('.tracks', { duration: 2000 });
+    sr.reveal('.playlist', { duration: 2000 });
+  </script>
+</body>
+
+
+<% include ../partials/footer.ejs %>

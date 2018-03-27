@@ -1,0 +1,279 @@
+body {
+  /*background-image: url(../images/blurred_background.jpg);*/
+  /*background-image: url(../images/rainbow_wallpaper.jpg);*/
+  background-image: url(../images/best_background.svg);
+  /*background: linear-gradient(to right, rgba(0, 115, 230, .4) , rgba(89, 0, 179, .4));*/
+  color: black;
+  text-decoration: none;
+  background-size: cover;
+  font-family: Raleway;
+  font-weight: normal;
+  background-attachment: fixed;
+  margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/*#nav {
+  background-color: rgba(102, 102, 153, .5)
+}*/
+
+.landing {
+  text-align: center;
+}
+
+#home{
+  margin-left: 30px;
+}
+
+#nav a {
+  color: gray;
+}
+
+.opaque-navbar {
+    background-color: rgba(0,0,0,0.5);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+    height: 60px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+}
+
+.opaque-navbar.opaque {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+@media (max-width: 950px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+h1{
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  font-weight: bold;
+}
+
+#header {
+  font-size: 125px;
+  font-family: "Urban Jungle";
+  /*color: rgba(0,0,0,1);*/
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+}
+
+a:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.artistz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+
+ul {
+  font-size: 30px;
+  margin-left: -40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+li a {
+  font-size: 20px;
+  color: black;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.newPlaylist {
+  background-color: rgba(0, 115, 230, .4);
+  border-color: rgba(0, 115, 230, .4);
+  border-radius: 50px / 50px;
+  padding: 20px;
+  transition: all .2s;
+}
+
+.newPlaylist:hover {
+  background-color: rgba(89, 0, 179, .4);
+  border-color: rgba(89, 0, 179, .4);
+}
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+}
+
+.camsjamz {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  color: white;
+}
+
+.cam {
+  flex-direction: column;
+}
+
+.form {
+  display: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  margin-top: 70px;
+}
+
+.albums {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#trackz {
+  text-align: center;
+}
+
+.trackID {
+  display: none;
+}
+
+.pointer {
+  transition: all .5s;
+}
+
+.pointer:hover {
+  opacity: .3;
+  cursor: pointer;
+}
+
+.carousels {
+  display: flex;
+  justify-content: space-around;
+}
+
+#carouselOne {
+  width: 400px;
+  height: 400px;
+  margin-top: 150px;
+}
+#carouselThree {
+  width:400px;
+  height: 400px;
+  margin-top: 150px;
+}
+
+.carousel-item {
+  transition: all .5s;
+}
+
+.carousel-item p {
+  visibility: hidden;
+  /*transition: all .5s;*/
+}
+
+.carousel-item h5 {
+  visibility: hidden;
+  /*transition: all .5s;*/
+}
+
+.carousel-item:hover p {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  font-size: 25px;
+  /*font-weight: bold;*/
+}
+
+.carousel-item:hover h5 {
+  visibility: visible;
+  opacity: 1;
+  font-size: 20px;
+  /*font-weight: bold;*/
+}
+
+.carousel-item:hover img {
+  opacity: .3;
+}
+
+.pop {
+  text-align: center;
+  color: white;
+}
+
+.row {
+  margin: 0px;
+}
+
+#albumDiv {
+  transition: all .5s;
+}
+
+#albumDiv:hover input {
+  opacity: .3;
+  cursor: pointer;
+}
+
+#albumDiv h4 {
+  visibility: hidden;
+}
+
+#albumDiv:hover h4 {
+  visibility: visible;
+  font-weight: bold;
+}
+
+.albumName {
+    position: absolute;
+    right: 15%;
+    bottom: 50px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/*.optionalInfo {
+  display: none;
+}*/

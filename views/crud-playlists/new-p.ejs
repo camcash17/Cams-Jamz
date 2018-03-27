@@ -1,0 +1,14 @@
+<%# views/crud-playlists/new-p.ejs %>
+<% include ../partials/head2.ejs %>
+
+<div class="playlistz">
+  <h1>Create a Playlist!</h1>
+  <form action="/playlist" method="POST">
+    <input type="text" name="playlist" />
+    <br>
+    <br>
+    <input class="pointer" type="submit" value="Create Playlist" />
+  </form>
+  <br>
+  <a href="/home">Cancel</a>
+</div>

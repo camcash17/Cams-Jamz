@@ -1,0 +1,19 @@
+<%# views/crud-playlists/edit-p.ejs %>
+<% include ../partials/head2.ejs %>
+
+<h1>Edit Playlist</h1>
+
+<form action="<%= `/playlist/${playlists.id}?_method=PUT` %>" method="POST">
+  <label for="title">Title: </label>
+  <input id="title" type="text" name="title" value="<%= playlists.title %>" />
+<br />
+<div class="trackID">
+  <label for="title">Playlist ID: </label>
+  <input type="text" name="playlist_id" readonly="readonly" value="<%= playlists.playlist_id %>" />
+</div>
+<br />
+<br />
+  <input class ="pointer" type="submit" value="Save changes" />
+</form>
+<br />
+<a href="<%= `/playlist/${playlists.playlist_id}` %>">Cancel</a>

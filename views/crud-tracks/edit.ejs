@@ -1,0 +1,55 @@
+<%# views/crud-tracks/edit.ejs %>
+<% include ../partials/head2.ejs %>
+
+<h1>Edit Track</h1>
+
+<div class="optionalInfo">
+<form action="<%= `/home/${tracks.id}?_method=PUT` %>" method="POST">
+  <label for="title">Title: </label>
+  <input id="title" type="text" name="title" value="<%= tracks.title %>" />
+
+  <br />
+  <br />
+
+  <label for="artist">Artist: </label>
+  <input id="artist" type="text" name="artist" value="<%= tracks.artist %>" />
+
+  <br />
+  <br />
+
+  <label for="album">Album: </label>
+  <input id="album" type="text" name="album" value="<%= tracks.album %>" />
+
+  <br />
+  <br />
+
+  <div class="trackID">
+    <label for="track_id">Track ID: </label>
+    <input id="track_id" type="text" name="track_id" readonly="readonly" value="<%= tracks.track_id %>" />
+  </div>
+
+  <br />
+  <br />
+</div>
+
+  <label for="playlist_id">Playlist: </label>
+  <select id="playlist_id" name="playlist_id">
+    <% playlists.forEach(playlists => { %>
+      <option
+        value="<%= playlists.id %>"
+        selected="<%= tracks.playlist_id == playlists.id %>">
+        <%= `${playlists.title}` %>
+      </option>
+    <% }) %>
+  </select>
+
+  <br />
+  <br />
+
+  <input class="pointer" type="submit" value="Save changes" />
+</form>
+
+<br />
+<br />
+
+<a href="<%= `/home/${tracks.id}` %>">Cancel</a>

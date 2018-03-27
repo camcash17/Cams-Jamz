@@ -1,0 +1,26 @@
+<% include ../partials/head2.ejs %>
+
+<body>
+  <br>
+  <div class="row">
+    <% for(i=0; i<=data.length-1; i++) { %>
+      <div id="albumDiv" class="col-md-3">
+        <!-- <h4 class"albumz"><%= data[i].name %></h4> -->
+      <form id="albumz" action="/home/artist/album" method="POST">
+        <input class="form" type="text" name="album" readonly="readonly" value="<%= data[i].id %>" />
+        <input type="image" src="<%= data[i].images[1].url %>" alt="<%= data[i].name %>" />
+      </form>
+      <div class="albumName">
+        <h4><%= data[i].name %></h4>
+      </div>
+      <br>
+      <br>
+     </div>
+    <% } %>
+  </div>
+  <script>
+    sr.reveal('#albumz', { duration: 2000 });
+  </script>
+</body>
+
+<% include ../partials/footer.ejs %>

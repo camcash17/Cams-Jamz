@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cam's Jamz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/styles/show_p.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script>window.sr = ScrollReveal({ reset: true });</script>
+  <script>
+    $(window).scroll(function() {
+      if($(this).scrollTop() > 0)  /*height in pixels when the navbar becomes non opaque*/
+      {
+          $('.opaque-navbar').removeClass('opaque');
+      } else {
+          $('.opaque-navbar').addClass('opaque');
+      }
+    });
+  </script>
+</head>
+<!-- <nav id="nav" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top opaque-navbar"> -->
+<nav id="nav" class="navbar navbar-expand-md inverse fixed-top opaque-navbar">
+  <a class="navbar-brand" href="https://www.spotify.com/us/"><img src="/images/spotify_logo.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a id="home" class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Playlists</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <% playlistz.forEach(playlists => { %>
+              <a class="dropdown-item" href="<%= `/playlist/${playlists.playlist_id}` %>"><%= playlists.title %></a>
+          <% }) %>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/home/artist" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="artist" placeholder="Find an Artist" aria-label="Find an Artist">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

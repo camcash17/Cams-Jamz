@@ -1,0 +1,121 @@
+body {
+  background-image: url(../images/playlist_background.jpg);
+  color: white;
+  background-size:100%;
+  font-family: Raleway;
+  background-attachment: fixed;
+}
+
+#home{
+  margin-left: -10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+}
+
+#nav a {
+  color: gray;
+}
+
+.opaque-navbar {
+    background-color: rgba(0,0,0,0.5);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+    height: 60px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+}
+
+.opaque-navbar.opaque {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+@media (max-width: 950px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.playlist {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+#header {
+  font-size: 100px;
+  font-family: "Urban Jungle";
+  color: white;
+}
+
+.tracks {
+  font-size: 25px;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 5px;
+  border-color: white;
+  width: 600px;
+  transition: all .2s;
+  font-family: Raleway;
+}
+
+.tracks:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+
+.tracktitle {
+  font-size: 50px;
+  margin: 40px;
+}
+
+h4 {
+  margin: 10px;
+}
+
+li a {
+  font-size: 20px;
+  color: black;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.pointer {
+  transition: all .5s;
+}
+
+.pointer:hover {
+  opacity: .3;
+  cursor: pointer;
+}

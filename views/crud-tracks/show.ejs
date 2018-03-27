@@ -1,0 +1,22 @@
+<%# views/crud-tracks/show.ejs %>
+<% include ../partials/head2.ejs %>
+
+<h1><%= tracks.title %></h1>
+<p>ARTIST: <%= tracks.artist %></p>
+<p>ALBUM: <%= tracks.album %></p>
+<p class="trackID">TRACK ID: <%= tracks.track_id %></p>
+<% if (playlists) { %>
+  <h4>PLAYLIST: <%= `${playlists.title}` %></h4>
+<% } %>
+<br>
+<a href="<%= `/playlist/${tracks.playlist_id}` %>">Back to Playlist</a>
+<br>
+<br>
+<!-- <a href="<%= `/home/${tracks.id}/edit` %>">Edit Track</a>
+<br>
+<br> -->
+<form action="<%= `/home/${tracks.id}?_method=DELETE` %>" method="POST">
+  <input class="pointer" type="submit" value="Delete" />
+</form>
+<br>
+<iframe src="https://open.spotify.com/embed?uri=spotify:track:<%= tracks.track_id %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>

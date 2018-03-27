@@ -1,0 +1,23 @@
+<% include ../partials/head2.ejs %>
+
+<body>
+  <div class"albumTracks">
+    <% for(i=0; i<=data.length-1; i++) { %>
+      <div id="trackz">
+        <!-- <h1><%= data[i].name %></h1> -->
+        <iframe src="https://open.spotify.com/embed?uri=spotify:track:<%= data[i].id %>&theme=white" width="500" height="80" frameborder="0" allowtransparency="true"></iframe>
+        <form action="/home/artist/album/new" method="POST">
+          <input class= "form" type="text" name="track" readonly="readonly" value="<%= data[i].id %>" />
+          <input class="pointer" type="submit" value="Choose Track" />
+        </form>
+      </div>
+    <br>
+    <br>
+    <% } %>
+  </div>
+  <script>
+    sr.reveal('#trackz', { duration: 1000 });
+  </script>
+</body>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cam's Jamz</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script>window.sr = ScrollReveal({ reset: true });</script>
+  <script>
+    $(window).scroll(function() {
+      if($(this).scrollTop() > 0)  /*height in pixels when the navbar becomes non opaque*/
+      {
+          $('.opaque-navbar').removeClass('opaque');
+      } else {
+          $('.opaque-navbar').addClass('opaque');
+      }
+    });
+  </script>
+</head>
+<!-- <nav id="nav" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top opaque-navbar"> -->
+<nav id="nav" class="navbar navbar-expand-md inverse fixed-top opaque-navbar">
+  <a class="navbar-brand" href="https://www.spotify.com/us/"><img src="/images/spotify_logo.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a id="home" class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Playlists</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <% playlists.forEach(playlists => { %>
+              <a class="dropdown-item" href="<%= `/playlist/${playlists.playlist_id}` %>"><%= playlists.title %></a>
+          <% }) %>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/home/artist" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="artist" placeholder="Find an Artist" aria-label="Find an Artist">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<body>
+  <div class="header">
+    <header id="header">CAM'S JAMZ</header>
+    <a href="playlist/new">
+    <div class="newPlaylist">
+      <h2 =class"create">New Playlist</h2>
+    </div>
+    </a>
+  </div>
+<br>
+<br>
+<br>
+  <div class="carousels">
+    <div id="carouselOne" class="carousel slide" data-ride="carousel">
+      <h2 class="pop">Discover Albums</h2>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href= "https://open.spotify.com/album/3cMpdE2Z4lKfVXJShcvBMW"><img class="d-block w-100" src="https://www.billboard.com/files/styles/900_wide/public/media/The-Beatles-Abbey-Road-album-covers-billboard-1000x1000.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The Beatles</h5>
+              <p>Abbey Road</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href= "https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN"><img class="d-block w-100" src="https://www.billboard.com/files/styles/900_wide/public/media/Pink-Floyd-Dark-Side-of-the-Moon-album-covers-billboard-1000x1000.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Pink Floyd</h5>
+              <p>Dark Side of the Moon</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href= "https://open.spotify.com/album/2guirTSEqLizK7j9i1MTTZ"><img class="d-block w-100" src="https://www.billboard.com/files/styles/900_wide/public/media/Nirvana-Nevermind-album-covers-billboard-1000x1000.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Nirvana</h5>
+              <p>Nevermind</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselOne" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselOne" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div id="carouselTwo" class="carousel slide" data-ride="carousel">
+      <h2 class="pop">Discover Playlists</h2>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <iframe src="https://open.spotify.com/embed?uri=spotify:user:12152445064:playlist:0CU2B6Yjnx8DHwjwjiAHkH" width="500" height="700" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+        <div class="carousel-item">
+          <iframe src="https://open.spotify.com/embed?uri=spotify:user:12152445064:playlist:1oAAR1UdFbANdRoIUkEL4N" width="500" height="700" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+        <div class="carousel-item">
+          <iframe src="https://open.spotify.com/embed?uri=spotify:user:12152445064:playlist:7nLrZwLNWMCDxWjvqvg5bm" width="500" height="700" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselTwo" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselTwo" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div id="carouselThree" class="carousel slide" data-ride="carousel">
+      <h2 class="pop">Discover Artists</h2>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href= "https://open.spotify.com/artist/22WZ7M8sxp5THdruNY3gXt"><img class="d-block w-100" src="https://upload.wikimedia.org/wikipedia/commons/6/69/The_Doors_1968.JPG" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <p>The Doors</p>
+            </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+          <a href= "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4"><img class="d-block w-100" src="/images/kygo.jpg" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+            <p>Kygo</p>
+          </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href= "https://open.spotify.com/artist/57bUPid8xztkieZfS7OlEV"><img class="d-block w-100" src="https://santaradio.co.uk/assets/img/artists/the-supremes.jpg" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+            <p>The Supremes</p>
+          </div>
+          </a>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+    <br>
+    <br>
+    <br>
+  <script>
+    sr.reveal('.camsjamz', { duration: 3000 });
+    sr.reveal('.pop', { duration: 2500 });
+    sr.reveal('.carousels', { duration: 2500 });
+    sr.reveal('.header', { duration: 2000 });
+  </script>
+</body>
+
+<% include ../partials/footer.ejs %>
